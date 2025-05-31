@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../../services/api";
+import { Link } from "react-router-dom";
 
 function ProductGrid(props) {
     const [products, setProducts] = useState([]);
@@ -32,11 +33,13 @@ function ProductGrid(props) {
                 </div>
             <div className="flex p-10 gap-6 flex-col sm:flex-row">
                 {products.map(product => (
-                    <div className="bg-neutral-700 border-1 border-neutral-800 w-fit p-4 leading-6 rounded-lg hover:shadow-lg transition-shadow shadow-blue-400/20">
-                        <img src={product.image} alt="digital nest merchandise" className="object-cover min-w-40"/>
-                        <p className="text-xl mt-2">{product.name}</p>
-                        <p className="text-lg text-blue-400">${product.price.toFixed(2)}</p>
-                    </div>
+                    <Link to={`/product/${product.id}`} key={product.id}>
+                        <div className="bg-neutral-600 border-1 border-neutral-800 w-fit min-h-80 p-4 leading-6 rounded-lg hover:shadow-lg transition-shadow shadow-blue-400/20">
+                            <img src={product.image} alt="digital nest merchandise" className="object-cover min-w-40"/>
+                            <p className="text-xl mt-2 text-white">{product.name}</p>
+                            <p className="text-lg text-blue-400">${product.price.toFixed(2)}</p>
+                        </div>
+                    </Link>
                 ))}
                 </div>
         </div>
