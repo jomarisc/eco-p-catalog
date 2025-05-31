@@ -18,3 +18,13 @@ export const getProducts = async () => {
     throw error; // Re-throw the error so the component can handle it
   }
 };
+
+export const getDetails = async (id) => {
+    try {
+        const response = await api.get(`/products/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching details:', error);
+        throw error;
+    }
+}

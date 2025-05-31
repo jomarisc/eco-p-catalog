@@ -1,20 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 
-import ProductGrid from './components/ProductGrid/ProductGrid'
+import Home from './pages/Home'
 import Header from './components/Header/Header'
+import ProductPage from './pages/ProductPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <Header/>
-      <ProductGrid/>
-    </>
+    <BrowserRouter>
+    <Header/>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path={'/product/:id'}element={<ProductPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
