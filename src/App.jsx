@@ -9,7 +9,7 @@ import ProductPage from './pages/ProductPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/eco-p-catalog">
     <Header/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
