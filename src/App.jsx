@@ -8,8 +8,6 @@ import Header from './components/Header/Header'
 import ProductPage from './pages/ProductPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
     <Header/>

@@ -30,7 +30,8 @@ function ProductGrid(props) {
                     <option value="option2">Electronics</option>
                     <option value="option3">Accessories</option>
                 </select>
-                </div>
+            </div>
+
             <div className="flex p-10 gap-6 flex-col sm:flex-row">
                 {products.map(product => (
                     <Link to={`/product/${product.id}`} key={product.id}>
@@ -41,7 +42,8 @@ function ProductGrid(props) {
                         </div>
                     </Link>
                 ))}
-                </div>
+            </div>
+            
         </div>
     );
 }
